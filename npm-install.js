@@ -25,7 +25,7 @@
 const os     = require("os")
 const path   = require("path")
 const fs     = require("fs")
-const mkdirp = require("mkdirp")
+const { mkdirp } = require("mkdirp")
 const execa  = require("execa")
 
 if (process.argv[2] === "prolog") {
@@ -50,4 +50,3 @@ else if (process.argv[2] === "epilog") {
             execa.command(`xattr -cr ${binary} && codesign -s - ${binary}`, { shell: true })
     }
 }
-
